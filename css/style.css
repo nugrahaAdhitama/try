@@ -1,0 +1,60 @@
+body {
+    overflow-x: hidden;
+}
+.card a img {
+    width: 100%;
+}
+
+.display-4 {
+    font-family: 'Roboto Mono';
+}
+
+.lead {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+#navbar {
+    background-color: #ddd;
+}
+
+.card-body{
+    transition: .4s;
+}
+
+.change-color {
+    background-color: aqua;
+}
+
+.card-text {
+    font-family: 'Inconsolata', monospace;
+}
+
+.bio-head {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.bio {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+footer {
+    background-color: #212529;
+}
+
+section {
+    padding-top: 5rem;
+    background-color: #ddd;
+}
+
+footer {
+    padding-top: 5rem;
+}
+
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+
+/* akhir import font */
