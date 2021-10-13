@@ -1,6 +1,6 @@
 <?php
 // koneksi ke halaman functions.php
-require 'functions.php';
+require 'functions/functions.php';
 
 $writers = query("SELECT * FROM penulis");
 
@@ -110,12 +110,12 @@ $writers = query("SELECT * FROM penulis");
           <?php foreach($writers as $writer) : ?>
           <div class="col-md-3 mb-3">
             <div class="card">
-              <a href="<?= $writer["nama_panggilan"]; ?>.php?id=<?= $writer["id"]; ?>"><img src="img/<?= $writer["thumbnail_gambar"]; ?>" class="card-img-top" alt="Projects 1"></a>
+              <a href="hasil karya/<?= $writer["nama_panggilan"]; ?>.php?id=<?= $writer["id"]; ?>"><img src="img/<?= $writer["thumbnail_gambar"]; ?>" class="card-img-top" alt="Projects 1"></a>
               <div class="card-body bg-dark">
                 <p class="card-text text-light">
                   Karya: <?= $writer["nama_lengkap"]; ?>
                   <br>
-                  <a href="<?= $writer["nama_panggilan"]; ?>.php?id=<?= $writer["id"];?>" class="text-light link-text">Read More</a>
+                  <a href="hasil karya/<?= $writer["nama_panggilan"]; ?>.php?id=<?= $writer["id"]; ?>" class="text-light link-text">Read More</a>
                 </p>
               </div>
             </div>
