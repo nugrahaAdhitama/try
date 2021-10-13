@@ -46,7 +46,7 @@ $writers = query("SELECT * FROM penulis");
                 <a class="nav-link" href="#jumbotron">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#about">Tentang Kami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#projects">Hasil Karya</a>
@@ -63,9 +63,9 @@ $writers = query("SELECT * FROM penulis");
     <section class="jumbotron text-center" id="jumbotron">
       <div class="container">
         <div class="row text-center justify-content-evenly align-items-center d-flex flex-row-reverse">
-          <!-- <div class="col-md-6">
-            <img src="img/SVG/3630159.png" alt="Jumbotron Picture" class="d-block mx-lg-auto img-fluid" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="1500">
-          </div> -->
+          <div class="col-md-6">
+            <img src="img/3630159.png" alt="Jumbotron Picture" class="d-block mx-lg-auto img-fluid" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="1500">
+          </div>
           <div class="col-md-6">
             <h1 class="display-4 mt-3">LITERASI XII MIPA 1</h1>
             <p class="lead"></p>

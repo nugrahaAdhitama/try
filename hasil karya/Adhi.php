@@ -43,17 +43,17 @@ $writers = query("SELECT * FROM penulis WHERE id != $id");
     <div id="navbar">
       <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #212529;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php#jumbotron">XII MIPA 1</a>
+          <a class="navbar-brand" href="../index.php#jumbotron">XII MIPA 1</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.php#jumbotron">Home</a>
+                <a class="nav-link" href="../index.php#jumbotron">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php#about">About</a>
+                <a class="nav-link" href="../index.php#about">Tentang Kami</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#projects">Hasil Karya</a>
