@@ -109,6 +109,7 @@ form {
     padding: 0;
     font-size: .95rem;
     color: #151111;
+    transition: 0.4s;
 }
 
 label {
@@ -119,4 +120,14 @@ label {
     font-size: .95rem;
     color: #bbb;
     pointer-events: none;
+    transition: 0.2s;
+}
+
+.input-field.active {
+    border-bottom-color: #151111;
+}
+
+.input-field.active + label {
+    font-size: .75rem;
+    top: -2px;
 }
