@@ -1,5 +1,6 @@
 const inputs = document.querySelectorAll(".input-field");
 const toggles = document.querySelectorAll(".toggle");
+const images = document.querySelectorAll(".image");
 const main = document.querySelector("main");
 
 inputs.forEach( inp => {

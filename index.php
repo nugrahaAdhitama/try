@@ -51,6 +51,15 @@ $writers = query("SELECT * FROM penulis");
               <li class="nav-item">
                 <a class="nav-link" href="#projects">Hasil Karya</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Upload</a></li>
+                  <li><a class="dropdown-item" href="login/index.html">Login</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
