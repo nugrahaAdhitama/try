@@ -50,7 +50,7 @@ main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    transition: 1.6s ease-in-out;
+    transition: 0.8s ease-in-out;
 }
 
 form {
@@ -63,7 +63,7 @@ form {
     justify-content: space-evenly;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    transition: opacity 0.5s 0.8s;
+    transition: opacity 0.3s 0.4s;
 }
 
 form.register-form {
@@ -194,7 +194,7 @@ main.register-mode .panels-wrap {
     width: 55%;
     left: 45%;
     border-radius: 2rem;
-    transition: 1.6s ease-in-out;
+    transition: 0.8s ease-in-out;
     background-color: #212529;
 }
 
@@ -206,7 +206,7 @@ main.register-mode .panels-wrap {
     grid-column: 1/2;
     grid-row: 1/2;
     margin: 0 auto;
-    transition: opacity 0.6s 0.8s;
+    transition: opacity 0.3s 0.4s;
 }
 
 img.img-2 {
