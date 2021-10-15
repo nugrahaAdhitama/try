@@ -13,10 +13,9 @@ $users = query("SELECT email, hash, active, FROM users WHERE email='$email' AND 
 $match = mysqli_num_rows($users);
 
 if($match > 0) {
-    query("UPDATE users SET active='1' WHERE email='$email' AND hash='$hash' AND active='0'") 
+    query("UPDATE users SET active='1' WHERE email='$email' AND hash='$hash' AND active='0'");
+    $msg = "Akun anda berhasil diverifikasi";
 }
-
-echo $match;
 
 ?>
 
@@ -31,6 +30,18 @@ echo $match;
 <body>
     
     <h1>Verifikasi Akun</h1>
+
+    <?php if(isset($msg)) : ?>
+        <section class="jumbotron text-center" id="jumbotron">
+            <div class="container">
+              <div class="row text-center justify-content-evenly align-items-center d-flex flex-row-reverse">
+                <div class="col-md-12">
+                  <p class="lead"><?= $msg; ?></p>
+                </div>
+              </div>
+            </div>
+        </section>
+    <?php endif; ?>
 
 </body>
 </html> 
