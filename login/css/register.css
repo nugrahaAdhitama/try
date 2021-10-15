@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.alert-wrapper{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #ff8c6b;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    height: 360px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.3rem;
+    box-shadow: 0 60px 40px -30px rgba(0,0,0,0.27);
+}
+
+.inner-container {
+    position: absolute;
+    width: 540px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-content-wrapper {
+    display: flex;
+    max-width: 360px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction: column;
+}
+
+.alert-content {
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    width: 100%;
+    height: 43px;
+    border: none;
+    cursor: pointer;
+    border-radius: .8rem;
+    font-size: .8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #151111;
+    color: white;
+}
+
+/* media query */
+@media(max-width: 850px) {
+    .container {
+        height: auto;
+        max-width: 550px;
+        overflow: hidden;
+    }
+
+    .inner-container {
+        position: static;
+        transform: none;
+        width: revert;
+        height: revert;
+        padding: 2rem;
+    }
+
+    .alert-content-wrapper {
+        position: revert;
+        width: 100%;
+        height: auto;
+    }
+
+    .image {
+        display: none;
+    }
+}
+
+@media (max-width: 530px) {
+    .alert-wrapper {
+        padding: 1rem;
+    }
+
+    .container {
+        border-radius: 2rem;
+    }
+
+    .inner-container {
+        padding: 1rem;
+    }
+
+    .alert-content-wrapper {
+        padding: 1.5 rem 1rem;
+        border-radius: 1.6rem;
+    }
+
+
+}
