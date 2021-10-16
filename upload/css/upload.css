@@ -211,6 +211,7 @@ main.register-mode .panels-wrap {
     left: 45%;
     border-radius: 2rem;
     transition: 0.8s ease-in-out;
+    background-color: #212529;
 }
 
 

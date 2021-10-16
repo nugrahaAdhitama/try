@@ -3,10 +3,11 @@
 require '../functions/functions.php';
 
 // cek apakah tombol submit sudah ditekan atau belum
-if(isset($_POST["submit"])) {
+if(isset($_POST["upload"])) {
+
     
     // cek apakah data berhasil ditambahkan atau tidak
-    if( tambah($_POST) > 0 ) {
+    if( upload($_POST) > 0 ) {
         $msg = "File berhasil diupload";
     } else {
         $msgFail = "File gagal diupload";
@@ -30,11 +31,11 @@ if(isset($_POST["submit"])) {
     <link rel="stylesheet" href="css/upload.css">
 
     <?php if(isset($msg)) : ?>
-    <title>Akun berhasil dibuat!</title>
+    <title>File berhasil diupload!</title>
     <?php endif; ?>
 
     <?php if(isset($msgFail)) : ?>
-    <title>Akun gagal dibuat!</title>
+    <title>File gagal diupload!</title>
     <?php endif; ?>
   </head>
   <body>
@@ -58,13 +59,13 @@ if(isset($_POST["submit"])) {
                         </div>
 
                         <div class="actual-form">
-                            <a href="index.html"><button class="login-btn">OK!</button></a>
+                            <a href="../index.php"><button class="login-btn">OK!</button></a>
                         </div>
                     </div>
                 </div>
     
                 <div class="panels-wrap">
-                    <img src="../img/illustration/registration-success.svg" alt="login-illustration" class="image img-1">
+                    <img src="../img/illustration/upload-success.svg" alt="login-illustration" class="image img-1">
                 </div>
             </div>
         </div>
