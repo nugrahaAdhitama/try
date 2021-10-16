@@ -1,6 +1,6 @@
 <?php
 // koneksi ke database
-$connectSQL = mysqli_connect("localhost", "root", "", "literasi_xiimipa1");
+$connectSQL = mysqli_connect("sql101.epizy.com", "epiz_30052651", "wvRBbnW3CbD", "epiz_30052651_literasixiimipa1");
 
 error_reporting(0);
 
@@ -18,23 +18,21 @@ function query($query) {
     return $rows;
 }
 
-// membuat function registrasi
-function register ($data) {
+// membuat function register
+function register($data) {
     global $connectSQL;
 
-    $email = mysqli_real_escape_string($connectSQL, $data["email"]);
+    $email = mysqli_real_escape_string($connectSQL, strtolower($data["email"]));
     $password = mysqli_real_escape_string($connectSQL, $data["password"]);
     $password2 = mysqli_real_escape_string($connectSQL, $data["password2"]);
-    $hash = sha1(rand(0,1000));
-    $active = 0;
 
     // cek email sudah ada atau belum
-    $result = mysqli_query($connectSQL, "SELECT email FROM users WHERE email = '$email'");
+    $result = mysqli_query("SELECT email FROM users WHERE email='$email'");
     if(mysqli_fetch_assoc($result)) {
         return false;
     }
 
-    // cek konfirmasi password benar atau salah
+    // cek konfirmasi password
     if($password !== $password2) {
         return false;
     }
@@ -50,28 +48,32 @@ function register ($data) {
 function upload($data) {
     global $connectSQL;
 
-    // ambil data dari tiap elemen dalam form
-    $namaLengkap = htmlspecialchars($data["namaLengkap"]);
-    $namaPanggilan = htmlspecialchars($data["namaPanggilan"]);
-    $instagram = htmlspecialchars($data["instagram"]);
-    $judulKarya = $data["judulKarya"];
+    // ambil data dari tiap elemen di form
+    $fullName = mysqli_real_escape_string($connectSQL, htmlspecialchars($data["fullName"]));
+    $nickName = mysqli_real_escape_string($connectSQL, htmlspecialchars($data["nickName"]));
+    $instagram = mysqli_real_escape_string($connectSQL, htmlspecialchars($data["instagram"]));
+    $fileLiterasi = $data["fileLiterasi"];
 
     // upload file
-    $judulKarya = uploadFile();
-    if( !$judulKarya ) {
+    $fileLiterasi = uploadFile();
+    if( !$fileLiterasi ) {
         return false;
     }
 
-    // tambahkan file baru ke database
-    return mysqli_query($connectSQL, "INSERT INTO penulis(nama_lengkap, nama_panggilan, instagram, judul_karya) VALUES('$namaLengkap', '$namaPanggilan', '$instagram', '$judulKarya')");
+    // insert data ke database
+    $query = "INSERT INTO penulis (nama_lengkap, nama_panggilan, instagram, judul_karya) VALUES('$fullName', '$nickName', '$instagram', '$fileLiterasi')";
+
+    return mysqli_query($connectSQL, $query);
+
+    
 }
 
 // membuat function upload file
 function uploadFile() {
-    $namaFile = $_FILES['judulKarya']['name'];
-    $ukuranFile = $_FILES['judulKarya']['size'];
-    $error = $_FILES['judulKarya']['error'];
-    $tmpName = $_FILES['judulKarya']['tmp_name'];
+    $namaFile = $_FILES['fileLiterasi']['name'];
+    $ukuranFile = $_FILES['fileLiterasi']['size'];
+    $error = $_FILES['fileLiterasi']['error'];
+    $tmpName = $_FILES['fileLiterasi']['tmp_name'];
 
     // cek apakah tidak ada gambar yang diupload
     if( $error === 4 ) {
@@ -111,7 +113,7 @@ function uploadFile() {
     $namaFileBaru = uniqid();
     $namaFileBaru .= '-';
     // panggil nama user
-    $namaUser = $_POST["namaPanggilan"];
+    $namaUser = $_POST["fullName"];
     $namaFileBaru .= $namaUser;
     $namaFileBaru .= '.';
     $namaFileBaru .= $ekstensiFile;

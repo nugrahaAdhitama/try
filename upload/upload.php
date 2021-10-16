@@ -5,7 +5,6 @@ require '../functions/functions.php';
 // cek apakah tombol submit sudah ditekan atau belum
 if(isset($_POST["upload"])) {
 
-    
     // cek apakah data berhasil ditambahkan atau tidak
     if( upload($_POST) > 0 ) {
         $msg = "File berhasil diupload";
@@ -92,7 +91,7 @@ if(isset($_POST["upload"])) {
                         </div>
 
                         <div class="actual-form">
-                            <a href="index.html"><button class="fail-btn">OK!</button></a>
+                            <a href="../index.php"><button class="fail-btn">OK!</button></a>
                         </div>
                     </div>
                 </div>
