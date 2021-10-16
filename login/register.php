@@ -27,38 +27,81 @@ if(isset($_POST["register"])){
     <!-- MY CSS -->
     <link rel="stylesheet" href="css/register.css">
 
+    <?php if(isset($msg)) : ?>
     <title>Akun berhasil dibuat!</title>
+    <?php endif; ?>
+
+    <?php if(isset($msgFail)) : ?>
+    <title>Akun gagal dibuat!</title>
+    <?php endif; ?>
   </head>
   <body>
-  <?php if(isset($msg)) : ?>
-  <section class="alert-wrapper">
-      <div class="container">
-          <div class="row text-center inner-container">
-              <div class="col-md-12 alert-content-wrapper">
-                    <div class="alert alert-info alert-content" role="alert">
-                        <?= $msg; ?>
-                    </div>
-                    <a href="../index.php" class="button"><button class="button btn btn-success" id="btn">Ok!</button></a>
-              </div>
-          </div>
-      </div>
-  </section>
-  <?php endif; ?>
 
-  <?php if(isset($msgFail)) : ?>
-  <section class="alert-wrapper">
-      <div class="container">
-          <div class="row text-center inner-container">
-              <div class="col-md-12 alert-content-wrapper">
-                    <div class="alert alert-danger alert-content" role="alert">
-                        <?= $msgFail; ?>
+  <!-- Kalo registrasi berhasil tampilkan ini -->
+  <?php if(isset($msg)) : ?>
+    <main class="success-registration">
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <div action="register.php" class="login-form gatau" autocomplete="off" method="post">
+                        <div class="logo">
+                            <img src="../img/logo/LogoSma6Jakarta.jpg" alt="">
+                            <h3>XII MIPA 1</h3>
+                        </div>
+
+                        <div class="heading">
+                            <div class="alert alert-success" role="alert">
+                                <?= $msg; ?>
+                            </div>
+                        </div>
+
+                        <div class="actual-form">
+                            <a href="index.html"><button class="login-btn">OK!</button></a>
+                        </div>
                     </div>
-                    <a href="index.html" class="button"><button class="button btn btn-danger" id="btn">Ok!</button></a>
-              </div>
-          </div>
-      </div>
-  </section>
+                </div>
+    
+                <div class="panels-wrap">
+                    <img src="../img/illustration/registration-success.svg" alt="login-illustration" class="image img-1">
+                </div>
+            </div>
+        </div>
+    </main>
   <?php endif; ?>
+  <!-- Akhir dari registrasi berhasil -->
+
+  <!-- Jika registrasi gagal tampilkan ini -->
+  <?php if(isset($msgFail)) : ?>
+    <main class="fail-registration">
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <div action="register.php" class="login-form gatau" autocomplete="off" method="post">
+                        <div class="logo">
+                            <img src="../img/logo/LogoSma6Jakarta.jpg" alt="">
+                            <h3>XII MIPA 1</h3>
+                        </div>
+
+                        <div class="heading">
+                            <div class="alert alert-danger" role="alert">
+                                <?= $msgFail; ?>
+                            </div>
+                        </div>
+
+                        <div class="actual-form">
+                            <a href="index.html"><button class="fail-btn">OK!</button></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="panels-wrap">
+                    <img src="../img/illustration/registration-fail.svg" alt="login-illustration" class="image img-1">
+                </div>
+            </div>
+        </div>
+    </main>
+  <?php endif; ?>
+  <!-- Akhir dari registrasi gagal -->
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

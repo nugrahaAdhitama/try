@@ -11,7 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-.fail-registration {
+.fail-login {
     background-color: #F5004E;
     width: 100%;
     min-height: 100vh;
