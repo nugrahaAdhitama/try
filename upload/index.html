@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <main>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form action="upload.php" class="upload-form" autocomplete="off" method="post">
+                        <div class="logo">
+                            <img src="../img/logo/LogoSma6Jakarta.jpg" alt="">
+                            <h3>XII MIPA 1</h3>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Upload</h2>
+                            <p>Upload hasil literasimu disini</p>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" class="input-field" autocomplete="off" minlength="4" name="namaLengkap" required>
+                                <label>Nama Lengkap</label>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="input-field" autocomplete="off" minlength="4" name="namaPanggilan" required>
+                                <label>Nama Panggilan</label>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="input-field" autocomplete="off" minlength="4" name="instagram" required>
+                                <label>Instagram (tanpa '@')</label>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="file"  autocomplete="off" minlength="4" name="judulKarya" required>
+                            </div>
+
+                            <button type="submit" name="upload" class="login-btn">Upload!</button>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="panels-wrap">
+                    <img src="../img/illustration/login.svg.svg" alt="login-illustration" class="image img-1">
+                    <img src="../img/illustration/register.svg.svg" alt="register-illustration" class="image img-2">
+                </div>
+            </div>
+        </div>
+    </main>
+
+ <!--javascript files  -->
+ <script src="app.js"></script>
+</body>
+</html>
